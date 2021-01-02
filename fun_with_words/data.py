@@ -10,7 +10,7 @@ ENDLINE = 973904
 
 def get_full_dataset(filename=os.path.join(os.path.abspath(__file__), "../data/dictionary.txt")):
     with open(filename, encoding="utf-8") as f:
-    raw_data = f.readlines()[STARTLINE:ENDLINE]
+        raw_data = f.readlines()[STARTLINE:ENDLINE]
     words = defns(raw_data, lambda x: x[0].isalnum())
     data = [(d, word) for (word, defn) in words.items() for d in defn]
     return data
